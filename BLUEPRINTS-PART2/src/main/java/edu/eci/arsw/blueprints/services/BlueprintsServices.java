@@ -37,18 +37,14 @@ public class BlueprintsServices<bpf> {
     @Qualifier("redundancyFilter")
     BlueprintsFilter bpf;
 
-    public void addNewBlueprint(Blueprint bp) {
-        try {
-            System.out.println(bpp);
-            bpp.saveBlueprint(bp);
-        } catch (BlueprintPersistenceException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    public void addNewBlueprint(Blueprint bp) throws BlueprintPersistenceException {
+
+        System.out.println(bpp);
+        bpp.saveBlueprint(bp);
     }
 
     public Set<Blueprint> getAllBlueprints() {
-        return null;
+        return bpp.getAllBlueprints();
     }
 
     /**

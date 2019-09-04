@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.arsw.blueprints.test.persistence.impl;
+/*package edu.eci.arsw.blueprints.test.persistence.impl;
 
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
@@ -22,13 +22,13 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;*/
 
 /**
  *
  * @author hcadavid
  */
-public class InMemoryPersistenceTest {
+/*public class InMemoryPersistenceTest {
     
     @Test
     public void saveNewAndLoadTest() throws BlueprintPersistenceException, BlueprintNotFoundException{
@@ -212,4 +212,4 @@ public class InMemoryPersistenceTest {
 
 
     
-}
+}*/

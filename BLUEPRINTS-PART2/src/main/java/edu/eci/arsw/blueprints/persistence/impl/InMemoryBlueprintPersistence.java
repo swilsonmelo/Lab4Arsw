@@ -33,9 +33,18 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
     public InMemoryBlueprintPersistence() {
         //load stub data
-        Point[] pts=new Point[]{new Point(140, 140),new Point(115, 115)};
-        Blueprint bp=new Blueprint("_authorname_", "_bpname_ ",pts);
-        blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
+        Point[] ptsbp1=new Point[]{new Point(130, 140),new Point(125, 115)};
+        Blueprint bp1=new Blueprint("_authorname_", "_bpname_first_",ptsbp1);
+        Point[] ptsbp2=new Point[]{new Point(140, 140),new Point(115, 115)};
+        Blueprint bp2=new Blueprint("_authorname_", "_bpname_second_",ptsbp2);
+        Point[] ptsbp3=new Point[]{new Point(112, 213),new Point(10, 1234)};
+        Blueprint bp3=new Blueprint("_authorname_second_", "_bpname_",ptsbp3);
+        Point[] ptsbp4=new Point[]{new Point(1234, 140),new Point(4123, 115)};
+        Blueprint bp4=new Blueprint("_authorname_third_", "_bpname_",ptsbp4);
+        blueprints.put(new Tuple<>(bp1.getAuthor(),bp1.getName()), bp1);
+        blueprints.put(new Tuple<>(bp2.getAuthor(),bp2.getName()), bp2);
+        blueprints.put(new Tuple<>(bp3.getAuthor(),bp3.getName()), bp3);
+        blueprints.put(new Tuple<>(bp4.getAuthor(),bp4.getName()), bp4);
         
     }    
     
@@ -51,7 +60,11 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
     @Override
     public Blueprint getBlueprint(String author, String bprintname) throws BlueprintNotFoundException {
-        return blueprints.get(new Tuple<>(author, bprintname));
+        Blueprint btr =  blueprints.get(new Tuple<>(author, bprintname));
+        if(btr==null){
+            throw new BlueprintNotFoundException("Blueprint Not Found");
+        }
+        return btr;
     }
 
     @Override
@@ -63,8 +76,20 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
                 bluePrints.add(blueprints.get(t));
             }
         }
+        if(bluePrints.size()==0){
+            throw new BlueprintNotFoundException("Autor no existente");
+        }
         return bluePrints;
 	}
+
+    @Override
+    public Set<Blueprint> getAllBlueprints() {
+        Set<Blueprint> bps = new HashSet<Blueprint>();
+        for(Tuple t : blueprints.keySet()){
+            bps.add(blueprints.get(t));
+        }
+        return bps;
+    }
 
     
     
