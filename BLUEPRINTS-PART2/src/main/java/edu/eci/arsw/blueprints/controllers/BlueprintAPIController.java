@@ -8,6 +8,8 @@ package edu.eci.arsw.blueprints.controllers;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import javax.xml.ws.RequestWrapper;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -74,8 +76,16 @@ public class BlueprintAPIController {
         }
     }
 
-
-
-    
+    @RequestMapping(value = "/{author}/{name}", method = RequestMethod.PUT)
+    public ResponseEntity<?> manjeadorPutBlueprints(@RequestBody Blueprint bp){
+        try{
+            System.out.println(bps.getBlueprint(bp.getAuthor(), bp.getName()));
+            bps.updateBlueprint(bp);
+            System.out.println(bps.getBlueprint(bp.getAuthor(), bp.getName()));
+            return new ResponseEntity<>("Updated",HttpStatus.OK);
+        }catch(Exception e){
+            return new ResponseEntity<>("Error - Not updated", HttpStatus.FORBIDDEN);
+        }
+    }
 }
 

@@ -103,4 +103,8 @@ public class BlueprintsServices<bpf> {
         return bpsf;
     }
 
+    public void updateBlueprint(Blueprint bp) throws BlueprintPersistenceException, BlueprintNotFoundException{
+        bpp.updateBlueprint(bp);
+    }
+
 }
