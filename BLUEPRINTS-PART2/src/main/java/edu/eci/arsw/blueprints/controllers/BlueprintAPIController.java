@@ -38,7 +38,7 @@ public class BlueprintAPIController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> manejadorGetRecursoBlueprints() {
         try{
-            System.out.println(bps.getAllBlueprints());
+            System.out.println(zbps.getAllBlueprints());
             return new ResponseEntity<>(bps.getAllBlueprints(), HttpStatus.ACCEPTED);
         }catch(Exception e){
             return new ResponseEntity<>("Error - Not Found", HttpStatus.NOT_FOUND);
