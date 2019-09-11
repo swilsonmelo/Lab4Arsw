@@ -6,7 +6,7 @@
 - Jeymar Vega
 
 
-### Part II
+### Part I
 
 Agregamos lo necesario a los métodos get del controlador, para hacer get a los BluePrint.
 ![alt text1](https://github.com/swilsonmelo/Lab4Arsw/blob/master/img/Get.PNG)
