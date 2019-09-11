@@ -76,7 +76,7 @@ public class BlueprintAPIController {
         }
     }
 
-    @RequestMapping(value = "/{author}/{name}", method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<?> manjeadorPutBlueprints(@RequestBody Blueprint bp){
         try{
             System.out.println(bps.getBlueprint(bp.getAuthor(), bp.getName()));
