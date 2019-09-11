@@ -2,8 +2,8 @@
 
 ### Integrantes:
 
--Willson Melo Merchan
--Jeymar Vega
+- Willson Melo Merchan
+- Jeymar Vega
 
 
 ### Part II
@@ -35,4 +35,4 @@ Agregamos lo necesario a los métodos Put del controlador, para poder modificar 
  
 	 
  -  Cuáles son las regiones críticas respectivas?
- - La única región critica encontrada es un hashMap que contiene todos los bluePrints.
+ -  La única región critica encontrada es un hashMap que contiene todos los bluePrints.
